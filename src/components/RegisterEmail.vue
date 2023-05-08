@@ -10,6 +10,7 @@
             full-width
             label="Register email for updates"
             outlined
+            v-model="email"
           >
           </v-text-field>
         </v-col>
@@ -22,11 +23,31 @@
 </template>
 
 <script>
-// import axios from "axios";
+import axios from "axios";
 export default {
+  methods: {
+    send_request() {
+      axios
+        .request({
+          url: `${process.env.VUE_APP_BASE_DOMAIN}/api/email-post`,
+          method: "POST",
+          data: {
+            email: this.email,
+          },
+        })
+        .then((response) => {
+          this.details = response["data"];
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  },
+
   data() {
     return {
       details: undefined,
+      email: undefined,
     };
   },
 };
