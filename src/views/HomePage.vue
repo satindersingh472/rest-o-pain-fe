@@ -23,7 +23,7 @@
           </div>
           <register-email />
           <div>
-            <p class="secondary_text text-h5 text-md-h3 mt-5">
+            <p class="secondary_text text-h5 text-md-h4 mt-5">
               We Are Located At...
             </p>
             <p class="heading_text text-h6 text-sm-h4 font-weight-bold">
@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import RegisterEmail from "@/components/RegisterEmail";
+import RegisterEmail from "@/components/registerEmail/RegisterEmail";
 export default {
   components: {
     RegisterEmail,
