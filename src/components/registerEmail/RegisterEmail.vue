@@ -5,7 +5,7 @@
         <v-col cols="12">
           <v-text-field
             color="#7F878A"
-            class="text-h6 heading_text"
+            class="text-body1 heading_text"
             background-color="#b7bee2"
             full-width
             label="Register email for updates"
@@ -23,7 +23,10 @@
                 :disabled="disable"
                 type="submit"
                 :loading="loading"
-                @click="validate_email(email, event)"
+                @click="
+                  send_request();
+                  disable_button();
+                "
               >
                 Send
               </v-btn>
@@ -62,19 +65,8 @@ export default {
   components: {},
 
   methods: {
-    revert_all() {
-      this.$refs.form.reset();
-      this.disable = false;
-      setTimeout(() => {
-        this.text = undefined;
-      }, 2000);
-    },
-
-    disable_button() {
-      this.disable = true;
-    },
-
     send_request() {
+      this.text = undefined;
       axios
         .request({
           url: `${process.env.VUE_APP_BASE_DOMAIN}/api/email-post`,
@@ -85,39 +77,13 @@ export default {
         })
         .then((response) => {
           this.text = response["data"];
-          this.revert_all();
+          this.$refs.form.reset();
+          this.snackbar = true;
         })
         .catch((error) => {
           this.text = error["response"]["data"];
-          this.revert_all();
-        });
-    },
-    validate_email(email) {
-      this.loading = true;
-
-      setTimeout(() => {
-        this.snackbar = true;
-        this.loading = false;
-      }, 1500);
-      axios
-        .request({
-          url: "https://emailvalidation.abstractapi.com/v1",
-          params: {
-            api_key: process.env.VUE_APP_API_KEY,
-            email: email,
-          },
-        })
-        .then((response) => {
-          if (response["data"]["deliverability"] === "DELIVERABLE") {
-            this.send_request();
-          } else {
-            this.text = "Please enter a valid email";
-            this.revert_all();
-          }
-        })
-        .catch(() => {
-          this.text = "Please enter a valid email";
-          this.revert_all();
+          this.$refs.form.reset();
+          this.snackbar = true;
         });
     },
   },
@@ -128,7 +94,6 @@ export default {
       snackbar: false,
       text: undefined,
       disable: false,
-      valid_email: false,
       loading: false,
       emailRules: [
         (v) => !!v || "E-mail is required",
