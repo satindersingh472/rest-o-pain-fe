@@ -18,7 +18,7 @@
               label="Yes, I want to get notified by E-mail."
               required
             ></v-checkbox>
-            <v-btn>Get Notified!</v-btn>
+            <v-btn class="primary">Get Notified!</v-btn>
           </v-card>
         </v-flex>
       </v-form>
@@ -27,11 +27,31 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
+  methods: {
+    send_request() {
+      axios
+        .request({
+          url: `${process.env.VUE_APP_BASE_DOMAIN}/api/email-post`,
+          method: "POST",
+          data: {
+            email: this.email,
+          },
+        })
+        .then((response) => {
+          response;
+        })
+        .catch((error) => {
+          error;
+        });
+    },
+  },
+
   data() {
     return {
       valid: true,
-      email: "",
+      email: undefined,
       emailRules: [
         (v) => !!v || "E-mail is required",
         (v) => /.+@.+\..+/.test(v) || "E-mail must be valid",

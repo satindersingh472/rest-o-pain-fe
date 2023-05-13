@@ -5,17 +5,19 @@
         <v-flex>
           <h1 class="secondary_text font-weight-regular">Opening Soon...</h1>
 
-          <h1 class="text-h3 text-md-h2 ma-5 font-weight-medium">
+          <h1 class="text-h3 text-md-h2 ma-5 font-weight-medium primary_text">
             Rest-O-Pain
           </h1>
-          <h1 class="text-h3 text-md-h2 mt-5 font-weight-medium">
+          <h1 class="text-h3 text-md-h2 mt-5 font-weight-medium primary_text">
             Physiotherapy
           </h1>
         </v-flex>
         <v-flex align-self-start>
           <h1 class="secondary_text mt-5 font-weight-regular">Our Location</h1>
-          <h1 class="text-h5 mt-5">#200, 6830 Ellerslie road sw,</h1>
-          <h1 class="text-h5 mt-5">Edmonton, AB, T6X 1A3</h1>
+          <h1 class="text-h5 mt-5 primary_text">
+            #200, 6830 Ellerslie road sw,
+          </h1>
+          <h1 class="text-h5 mt-5 primary_text">Edmonton, AB, T6X 1A3</h1>
         </v-flex>
       </v-flex>
 
@@ -60,6 +62,11 @@ export default {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 .primary_text {
-  color: $primary-color;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+* {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif !important  ;
 }
 </style>
