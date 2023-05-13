@@ -3,7 +3,7 @@
     <v-layout row wrap justify-center align-content-center fill-height>
       <v-form v-model="valid" ref="form">
         <v-flex align-self-center>
-          <v-card width="450px" class="text-center pa-5" flat>
+          <v-card width="375px" class="text-center pa-5" flat>
             <v-text-field
               v-model="email"
               :rules="emailRules"
@@ -18,7 +18,23 @@
               label="Yes, I want to get notified by E-mail."
               required
             ></v-checkbox>
-            <v-btn class="primary">Get Notified!</v-btn>
+            <v-btn class="primary" :disabled="!checkbox" @click="send_request"
+              >Get Notified!</v-btn
+            >
+            <v-snackbar v-model="snackbar" :timeout="2500">
+              {{ text }}
+
+              <template v-slot:action="{ attrs }">
+                <v-btn
+                  color="blue"
+                  text
+                  v-bind="attrs"
+                  @click="snackbar = false"
+                >
+                  Close
+                </v-btn>
+              </template>
+            </v-snackbar>
           </v-card>
         </v-flex>
       </v-form>
@@ -31,6 +47,7 @@ import axios from "axios";
 export default {
   methods: {
     send_request() {
+      this.text = undefined;
       axios
         .request({
           url: `${process.env.VUE_APP_BASE_DOMAIN}/api/email-post`,
@@ -40,16 +57,23 @@ export default {
           },
         })
         .then((response) => {
-          response;
+          this.text = response["data"];
+          this.snackbar = true;
+          this.$refs.form.reset();
         })
         .catch((error) => {
-          error;
+          this.text = error["response"]["data"];
+          this.snackbar = true;
+          this.$refs.form.reset();
         });
     },
   },
 
   data() {
     return {
+      checkbox: false,
+      snackbar: false,
+      text: undefined,
       valid: true,
       email: undefined,
       emailRules: [

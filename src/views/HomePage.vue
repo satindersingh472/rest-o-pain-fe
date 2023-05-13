@@ -12,12 +12,15 @@
             Physiotherapy
           </h1>
         </v-flex>
-        <v-flex align-self-start>
-          <h1 class="secondary_text mt-5 font-weight-regular">Our Location</h1>
-          <h1 class="text-h5 mt-5 primary_text">
+        <v-flex align-self-start class="mt-2">
+          <h1 class="secondary_text mt-5 pa-0 text-h5 font-weight-regular">
+            Our Location
+          </h1>
+          <h1 class="text-h6 mt-1 primary_text">
             #200, 6830 Ellerslie road sw,
           </h1>
-          <h1 class="text-h5 mt-5 primary_text">Edmonton, AB, T6X 1A3</h1>
+          <h1 class="text-h6 mt-1 primary_text">Edmonton, AB, T6X 1A3</h1>
+          <h1 class="text-body-1 primary_text">+1(780)-280-1001</h1>
         </v-flex>
       </v-flex>
 
@@ -68,5 +71,6 @@ export default {
 * {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif !important  ;
+  padding: 0px;
 }
 </style>

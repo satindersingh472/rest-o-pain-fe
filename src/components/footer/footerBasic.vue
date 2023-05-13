@@ -2,7 +2,7 @@
   <div>
     <v-layout justify-center align-content-end class="mt-2"
       ><v-flex>
-        <p class="text-center">
+        <p class="text-center text-caption">
           &copy; {{ year }} Rest-O-Pain. All Rights Reserved.
         </p>
       </v-flex></v-layout
