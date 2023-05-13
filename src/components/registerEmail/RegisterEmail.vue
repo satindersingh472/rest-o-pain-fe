@@ -1,34 +1,41 @@
 <template>
   <div>
     <v-form ref="form" @submit.prevent="submit">
-      <v-row justify="center" no-gutters>
+      <v-row no-gutters justify="start">
         <v-col cols="12">
           <v-text-field
             color="#7F878A"
             class="text-body1 heading_text"
             background-color="#b7bee2"
             full-width
-            label="Register email for updates"
+            label="Register to get notified"
             outlined
             v-model="email"
             :rules="emailRules"
+            rounded
           >
           </v-text-field>
+          <v-col>
+            <v-checkbox
+              class="pa-0 ma-0"
+              label="I would like to recieve updates via e-mail."
+              v-model="disable"
+              @click="$refs.form.validate()"
+            >
+            </v-checkbox>
+          </v-col>
         </v-col>
         <v-col>
           <template>
             <div class="text-center ma-2">
               <v-btn
                 class="primary"
-                :disabled="disable"
+                :disabled="!disable"
                 type="submit"
                 :loading="loading"
-                @click="
-                  send_request();
-                  disable_button();
-                "
+                @click="send_request()"
               >
-                Send
+                Notify
               </v-btn>
               <v-snackbar
                 v-if="text !== undefined"
@@ -106,6 +113,11 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/variables.scss";
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
 .secondary_text {
   color: $secondary-color;
 }

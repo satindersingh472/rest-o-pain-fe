@@ -2,7 +2,7 @@
   <div>
     <v-container fluid class="pa-0">
       <v-img
-        :src="`${image}`"
+        :src="`${image_online}`"
         style="max-width: 100%"
         height="100vh"
         max-width="100%"
@@ -55,6 +55,8 @@ export default {
   data() {
     return {
       image: require("@/assets/images/homepage.jpg"),
+      image_online:
+        "https://media.istockphoto.com/id/1246919734/photo/kinesiology-taping-treatment-with-blue-and-pink-tape-on-athlete-patient-injured-arm.jpg?s=612x612&w=is&k=20&c=PgbB4eLRbQp5iWpFr9vYdJXww2ikV-TtZHIzY6zk_sY=",
     };
   },
 };
