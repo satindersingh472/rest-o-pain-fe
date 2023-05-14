@@ -16,11 +16,11 @@
           <h1 class="secondary_text mt-5 pa-0 text-h5 font-weight-regular">
             Our Location
           </h1>
-          <h1 class="text-h6 mt-1 primary_text">
+          <h1 class="text-subtitle-1 mt-1 primary_text">
             #200, 6830 Ellerslie road sw,
           </h1>
-          <h1 class="text-h6 mt-1 primary_text">Edmonton, AB, T6X 1A3</h1>
-          <h1 class="text-body-1 primary_text">+1(780)-280-1001</h1>
+          <h1 class="text-subtitle-1 primary_text">Edmonton, AB, T6X 1A3</h1>
+          <h1 class="text-subtitle-1 primary_text">+1(780)-280-1001</h1>
         </v-flex>
       </v-flex>
 
