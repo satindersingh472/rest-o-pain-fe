@@ -20,7 +20,7 @@
             #200, 6830 Ellerslie road sw,
           </h1>
           <h1 class="text-subtitle-1 primary_text">Edmonton, AB, T6X 1A3</h1>
-          <h1 class="text-subtitle-1 primary_text">+1(780)-280-1001</h1>
+          <h1 class="text-subtitle-1 primary_text">+1 780-280-1001</h1>
         </v-flex>
       </v-flex>
 
