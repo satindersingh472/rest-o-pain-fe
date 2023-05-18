@@ -17,7 +17,7 @@
             Our Location
           </h1>
           <h1 class="text-subtitle-1 mt-1 primary_text">
-            #200, 6830 Ellerslie road sw,
+            #201, 6830 Ellerslie road sw,
           </h1>
           <h1 class="text-subtitle-1 primary_text">Edmonton, AB, T6X 1A3</h1>
 
