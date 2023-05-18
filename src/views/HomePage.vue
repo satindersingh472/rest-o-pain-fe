@@ -20,7 +20,9 @@
             #200, 6830 Ellerslie road sw,
           </h1>
           <h1 class="text-subtitle-1 primary_text">Edmonton, AB, T6X 1A3</h1>
+
           <h1 class="text-subtitle-1 primary_text">+1 780-280-1001</h1>
+          <h1 class="text-subtitle-1 primary-text">info@restopainphysio.ca</h1>
         </v-flex>
       </v-flex>
 
@@ -49,9 +51,7 @@ export default {
   },
   data() {
     return {
-      image_assets: require("@/assets/images/homepage.jpg"),
-      image_online:
-        "https://media.istockphoto.com/id/1143400985/photo/female-massage-therapist-massaging-patients-back.jpg?s=612x612&w=is&k=20&c=qzrYGeHGHBzJREo_rWKSw0qVp_lpruEr9cdT0ssOv34=",
+      image_assets: require("@/assets/images/homepage_istock.jpeg"),
     };
   },
 };
